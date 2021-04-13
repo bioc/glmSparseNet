@@ -4,9 +4,19 @@
 \alias{separate2GroupsCox}
 \title{Separate data in High and Low risk groups (based on Cox model)}
 \usage{
-separate2GroupsCox(chosen.btas, xdata, ydata, probs = c(0.5, 0.5),
-  no.plot = FALSE, plot.title = "SurvivalCurves", xlim = NULL,
-  ylim = NULL, expand.yzero = FALSE, legend.outside = FALSE, ...)
+separate2GroupsCox(
+  chosen.btas,
+  xdata,
+  ydata,
+  probs = c(0.5, 0.5),
+  no.plot = FALSE,
+  plot.title = "SurvivalCurves",
+  xlim = NULL,
+  ylim = NULL,
+  expand.yzero = FALSE,
+  legend.outside = FALSE,
+  ...
+)
 }
 \arguments{
 \item{chosen.btas}{list of testing coefficients to calculate prognostic
@@ -46,7 +56,7 @@ Draws multiple kaplan meyer survival curves (or just 1) and calculates
 logrank test
 }
 \examples{
-data('ovarian', package = 'survival')
+data('cancer', package = 'survival')
 xdata <- ovarian[,c('age', 'resid.ds')]
 ydata <- data.frame(time = ovarian$futime, status = ovarian$fustat)
 separate2GroupsCox(c(age = 1, 0), xdata, ydata)
